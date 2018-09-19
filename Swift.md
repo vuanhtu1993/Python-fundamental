@@ -6,15 +6,30 @@
  - Muốn điền biến vào trong string thì dùng cú pháp "Hello \(var)" write the back slash before parentheses
  - Muốn viết string nhiều dòng (multiple line) dùng syntax """ string here """ 
 #### 2. Array
-  let emptyArray = [String]() or emptyArray = []
+>  let emptyArray = [String]() _or_ emptyArray = []
  
 #### 3. Dictionary
-  let emptyDictionary = [String: Float]() or emptyDictionary = [:]
+>  let emptyDictionary = [String: Float]() _or_ emptyDictionary = [:]
   
 #### 4. Tuple 
 > let (width, height) = (800, 600)
+```Comparator operator
+let (width, height) = (800, 600)
+(width, height) < (400, 200)
+```
   
-#### 5.Control Flow
+#### 5.Arithmatic operater
+> 
+
+#### 6. For ... in {}
+```swift
+let range = 1...8
+print(range)
+let array = ["cat", "dog" ,"dinosaur", "lion"]
+for x in array[...1] {
+    print(x)
+}
+```
 
   
   
