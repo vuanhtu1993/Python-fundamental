@@ -1,6 +1,6 @@
 import cv2
 from matplotlib import pyplot as plt
-
+import numpy as np
 img = cv2.imread('../image/pout.jpg', 0)  # The ',0' makes it read the image as a grayscale image
 row, col = img.shape[:2]
 
@@ -29,7 +29,6 @@ def cdf(hist):
 def equalize_image(image):
     my_cdf = cdf(df(img))
     # use linear interpolation of cdf to find new pixel values. Scipy alternative exists
-    import numpy as np
     image_equalized = np.interp(image, range(0, 256), my_cdf)
     return image_equalized
 
