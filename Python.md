@@ -1,5 +1,5 @@
 ### Install Python in Windows
-1. Install Python 3.x
+##### 1. Install Python 3.x
 - Save python in the path environment variable of your computer (constantly reference the full installation path name) 
 2. Download pip from Source: https://bootstrap.pypa.io/get-pip.py
 -KSource: https://dev.to/el_joft/installing-pip-on-windows
@@ -13,3 +13,11 @@
 Biến đổi Fourier rời rạc hóa ảnh nhằm trích xuất được vector đặ trung của ảnh
 Ưu điểm: tốc độ biến đổi rất nhanh, áp dung cho việc kết hợp với các bộ lọc với thuộc tính
 "tích trên miền thòi gian bằng tích chập trong miền tần số"
+=======
+##### 2. Download pip from Source: https://bootstrap.pypa.io/get-pip.py
+-Source: https://dev.to/el_joft/installing-pip-on-windows
+-Navigate to the directory including ***get-pip.py*** run ***python get-pip.py***
+
+#### 3. Machine Learning Algorithm
+1. Linear regression one variable: https://medium.com/meta-design-ideas/linear-regression-by-using-gradient-descent-algorithm-your-first-step-towards-machine-learning-a9b9c0ec41b1
+
