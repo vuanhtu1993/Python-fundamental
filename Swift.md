@@ -101,5 +101,48 @@ repeat {
 } while start < 100
 ```
   
-  
+#### 8. Function:
+
+#### 9. Closure:
+
+#### 10. Enum
+
+#### 11. Structure 
+> Kieu luu tru gia tri tham tri (Validity)
+- Structure
+```swift
+ struct markStruct {
+   var mark1: Int
+   var mark2: Int
+   var mark3: Int
+
+   init(mark1: Int, mark2: Int, mark3: Int) {
+      self.mark1 = mark1
+      self.mark2 = mark2
+      self.mark3 = mark3
+   }
+}
+
+var marks = markStruct(mark1: 98, mark2: 96, mark3:100)
+print(marks.mark1)
+print(marks.mark2)
+print(marks.mark3)
+```
+#### 12. Class 
+> Kieu luu tru gia tri tham chiếu (Reference)
+- Structure
+```swift
+ class Student {
+   var studentname: String
+   var mark: Int 
+   var mark2: Int 
+   init(studentname: String, mark1: Int, mark2: Int) {
+      self.studentname = studentname
+      self.mark1 = mark1
+   }
+}
+var student1 = Student("studentname", "mark1")
+```
+#### 13. 
+
   
