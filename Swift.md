@@ -143,6 +143,34 @@ print(marks.mark3)
 }
 var student1 = Student("studentname", "mark1")
 ```
+- Inherit
+```swift
+ class Animal {
+   // Attribute can be assigned
+   var name: String = ""
+   func eat() {
+     print("Animal is eating")
+   }
+   // Read only attribute
+   var description: String {
+     return "this is an animal name \(self.name)"
+   }
+ }
+ 
+ class Dog: Animal {
+   func yarg() {
+     print("the dog is yarging")
+   }
+   override func eat() {
+     super.eat()
+     print('the dog can also yarg')
+   }
+ {
+ 
+ var myDog = Dog()
+ myDog.yarg()
+ myDog.eat()
+```
 #### 13. 
 
   
