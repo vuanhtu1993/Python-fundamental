@@ -173,4 +173,30 @@ var student1 = Student("studentname", "mark1")
 ```
 #### 13. 
 
+#### 14.
+
+#### 15.
+
+#### 16. Extension
+> To add more method to the existing class or struct
+``` swift
+
+extension UIColor {
+    static func rgba(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {
+        return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
+    }
+    static func uiColorFromHex(_ hex: UInt, _ alpha: CGFloat) -> UIColor {
+        let r = CGFloat((hex & 0xFF0000) >> 16) / 255.0
+        let g = CGFloat((hex & 0x00FF00) >> 8) / 255.0
+        let b = CGFloat(hex & 0x0000FF) / 255.0
+        return self.init(red: r, green: g, blue: b, alpha: alpha)
+    }
+}
+
+var darkRed = UIColor.uiColorFromHex(888888, 0.5)
+print(darkRed)
+
+```
+
+
   
