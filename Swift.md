@@ -198,5 +198,57 @@ print(darkRed)
 
 ```
 
+#### 17. Protocol
+> Dùng để định nghĩa các kiểu phương thức và thuộc tính cho enum, class, struct
+```swift
+// Protocol
+protocol InitialProtocol{
+    var name: String {get}
+    init(name: String)
+}
 
+class People {
+    
+}
+// Class Person inherited from People and conform InitialProtocol
+class Person: People, InitialProtocol {
+    var name: String
+    
+    required init(name: String) {
+        self.name = name
+    }
+}
+
+var person1 = Person(name: "Tus")
+```
   
+#### 17. Delegate
+
+#### 18. Generic
+> Presentation for the TYPE of variable, output function, ...
+> Instead of fixed the type variable and output function we can define it when calling
+```swift
+// Generic
+func swapVariable<T>(var1: inout T, var2: inout T) {
+    let temp = var1
+    var1 = var2
+    var2 = temp
+}
+
+var a = 10
+var b = 20
+swapVariable(var1: &a, var2: &b)
+print(a, b)
+
+func findItem<T: Equatable> (of target: T, in arrayItem: [T]) -> Int? {
+    for (index, item) in arrayItem.enumerated() {
+        if(target == item) {
+            return index
+        }
+    }
+    return nil
+}
+let name = "AnhTus"
+let arrayName = ["A", "B", "AnhTus"]
+findItem(of: name, in: arrayName)
+```
