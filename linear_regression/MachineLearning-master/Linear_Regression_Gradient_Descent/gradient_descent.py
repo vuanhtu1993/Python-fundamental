@@ -36,6 +36,9 @@ def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_i
     return [b, m]
 
 
+def drawFunction(b, m, x):
+    return b + m * x
+
 def run():
     # Step 1: Collect the data
     points = np.genfromtxt('data.csv', delimiter=',')
@@ -60,8 +63,8 @@ def run():
 
     plt.figure(1)
     plt.scatter(x, y)
-    equation = b + m * x
-    plt.plot(x, equation, 'r', label='Prediction')
+    print(x)
+    plt.plot(x, drawFunction(b, m, x), 'r', label='Prediction')
     plt.show()
 
 

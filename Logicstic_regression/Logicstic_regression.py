@@ -11,11 +11,11 @@ import pandas as pd
 # print(type(X), type(y))
 
 my_data = pd.read_csv('./data.csv', names=["grade1", "grade2", "label"])  # read the data
-print(my_data)
+# print(my_data)
 X = np.array(my_data.iloc[:, :2])
-print(X)
+# print(X)
 y = np.array(my_data.iloc[:, 2:3]).flatten()
-print(y)
+# print(y)
 
 
 class LogisticRegression:
@@ -71,19 +71,31 @@ class LogisticRegression:
 
 model = LogisticRegression(lr=0.1, num_iter=300000)
 
-print(model.fit(X, y))
+model.fit(X, y)
 print(model.theta)
+
+drawData = my_data.iloc[:, :2]
+def drawFunction(X):
+    x1 = X.iloc[:, 0:1]
+    x2 = X.iloc[:, 1:2]
+    return model.theta[0] + model.theta[1] * x1 + model.theta[1] * x2 * x2
+
 
 plt.figure(figsize=(10, 6))
 plt.scatter(X[y == 0][:, 0], X[y == 0][:, 1], color='b', label='0')
 plt.scatter(X[y == 1][:, 0], X[y == 1][:, 1], color='r', label='1')
 plt.legend()
-x1_min, x1_max = X[:, 0].min(), X[:, 0].max(),
-x2_min, x2_max = X[:, 1].min(), X[:, 1].max(),
-xx1, xx2 = np.meshgrid(np.linspace(x1_min, x1_max), np.linspace(x2_min, x2_max))
-grid = np.c_[xx1.ravel(), xx2.ravel()]
-probs = model.predict_prob(grid).reshape(xx1.shape)
-print(xx1)
-plt.contour(xx1, xx2, probs, [0.5], linewidths=1, colors='black')
+# x1_min, x1_max = X[:, 0].min(), X[:, 0].max(),
+# x2_min, x2_max = X[:, 1].min(), X[:, 1].max(),
+# xx1, xx2 = np.meshgrid(np.linspace(x1_min, x1_max), np.linspace(x2_min, x2_max))
+# grid = np.c_[xx1.ravel(), xx2.ravel()]
+# probs = model.predict_prob(grid).reshape(xx1.shape)
+# plt.contour(xx1, xx2, probs, [0.5], linewidths=1, colors='black')
 
-# plt.show()
+
+test_data = pd.read_csv('./test_data.csv', names=["grade1", "grade2"])
+print(test_data.iloc[:, :2])
+plt.plot(test_data.iloc[:, :2], drawFunction(test_data.iloc[:, :2]), color='r', label="Prediction")
+
+
+plt.show()
