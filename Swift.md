@@ -143,6 +143,112 @@ print(marks.mark3)
 }
 var student1 = Student("studentname", "mark1")
 ```
+- Inherit
+```swift
+ class Animal {
+   // Attribute can be assigned
+   var name: String = ""
+   func eat() {
+     print("Animal is eating")
+   }
+   // Read only attribute
+   var description: String {
+     return "this is an animal name \(self.name)"
+   }
+ }
+ 
+ class Dog: Animal {
+   func yarg() {
+     print("the dog is yarging")
+   }
+   override func eat() {
+     super.eat()
+     print('the dog can also yarg')
+   }
+ {
+ 
+ var myDog = Dog()
+ myDog.yarg()
+ myDog.eat()
+```
 #### 13. 
 
+#### 14.
+
+#### 15.
+
+#### 16. Extension
+> To add more method to the existing class or struct
+``` swift
+
+extension UIColor {
+    static func rgba(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {
+        return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
+    }
+    static func uiColorFromHex(_ hex: UInt, _ alpha: CGFloat) -> UIColor {
+        let r = CGFloat((hex & 0xFF0000) >> 16) / 255.0
+        let g = CGFloat((hex & 0x00FF00) >> 8) / 255.0
+        let b = CGFloat(hex & 0x0000FF) / 255.0
+        return self.init(red: r, green: g, blue: b, alpha: alpha)
+    }
+}
+
+var darkRed = UIColor.uiColorFromHex(888888, 0.5)
+print(darkRed)
+
+```
+
+#### 17. Protocol
+> Dùng để định nghĩa các kiểu phương thức và thuộc tính cho enum, class, struct
+```swift
+// Protocol
+protocol InitialProtocol{
+    var name: String {get}
+    init(name: String)
+}
+
+class People {
+    
+}
+// Class Person inherited from People and conform InitialProtocol
+class Person: People, InitialProtocol {
+    var name: String
+    
+    required init(name: String) {
+        self.name = name
+    }
+}
+
+var person1 = Person(name: "Tus")
+```
   
+#### 17. Delegate
+
+#### 18. Generic
+> Presentation for the TYPE of variable, output function, ...
+> Instead of fixed the type variable and output function we can define it when calling
+```swift
+// Generic
+func swapVariable<T>(var1: inout T, var2: inout T) {
+    let temp = var1
+    var1 = var2
+    var2 = temp
+}
+
+var a = 10
+var b = 20
+swapVariable(var1: &a, var2: &b)
+print(a, b)
+
+func findItem<T: Equatable> (of target: T, in arrayItem: [T]) -> Int? {
+    for (index, item) in arrayItem.enumerated() {
+        if(target == item) {
+            return index
+        }
+    }
+    return nil
+}
+let name = "AnhTus"
+let arrayName = ["A", "B", "AnhTus"]
+findItem(of: name, in: arrayName)
+```
